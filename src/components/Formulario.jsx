@@ -60,14 +60,16 @@ const Formulario = ({ guardarMoneda, guardarCriptomoneda }) => {
   }, []);
 
   //Cuando el user hace submit
+  //Validar si ambos campos estan llenos
+   //pasar los datos al componente principal
   const cotizarMoneda = (e) => {
     e.preventDefault();
-    //Validar si ambos campos estan llenos
+    
     if (moneda === "" || criptomoneda === "") {
       guardarError(true);
       return;
     }
-    //pasar los datos al componente principal
+   
     guardarError(false);
     guardarMoneda(moneda);
     guardarCriptomoneda(criptomoneda);

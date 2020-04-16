@@ -27,9 +27,10 @@ const useCriptomoneda = (label,stateInicial,MONEDAS) => {
 
   //State de nuestro custom Hook, aca lo declaramos
   const [state, actualizarState] = useState(stateInicial);
-
+//damos por implicito el return , aca se pone lo que se mostrara en pantalla
+//Siempre al usar map , debes poner un  key
   const SelectCripto = () => (
-    //damos por implicito el return , aca se pone lo que se mostrara en pantalla
+    
 
     <Fragment>
       <Label>{label}</Label>
@@ -39,7 +40,7 @@ const useCriptomoneda = (label,stateInicial,MONEDAS) => {
       >
         <option value="">-Seleccione-</option>
        {MONEDAS.map(MONEDAS => (
-          //Siempre al usar map , debes poner un  key
+          
           <option key={MONEDAS.CoinInfo.Id} value={MONEDAS.CoinInfo.Name}>{MONEDAS.CoinInfo.Name}</option>
        ))} 
       </Select>
